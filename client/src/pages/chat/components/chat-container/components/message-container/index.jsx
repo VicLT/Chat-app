@@ -49,14 +49,14 @@ const MessageContainer = () => {
             const showDate = messageDate !== lastDate;
             lastDate = messageDate;
             return (
-                < div key={index} >
+                <div key={index}>
                     {showDate && (
                         <div className="text-center text-gray-500 my-2">
                             {moment(message.timestamp).format("LL")}
                         </div>
                     )}
                     {selectedChatType === "contact" && renderDMMessages(message)}
-                </div >
+                </div>
             );
         });
     };

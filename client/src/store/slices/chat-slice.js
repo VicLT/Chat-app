@@ -17,7 +17,7 @@ export const createChatSlice = (set, get) => ({
 
         set({
             selectedChatMessages: [
-                ...selectedChatMessages, message,
+                ...selectedChatMessages,
                 {
                     ...message,
                     recipient:
