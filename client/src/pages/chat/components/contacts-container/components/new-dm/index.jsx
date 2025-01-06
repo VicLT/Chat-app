@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { animationDefaultOptions, getColor } from "@/lib/utils";
 import Lottie from "react-lottie";
 import { apiClient } from "@/lib/api-client";
-import { SEARCH_CONTACTS_ROUTES } from "@/utils/constants";
+import { HOST, SEARCH_CONTACTS_ROUTES } from "@/utils/constants";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { useAppStore } from "@/store";
@@ -96,7 +96,7 @@ const NewDM = () => {
                                                     <AvatarImage
                                                         src={`${HOST}/${contact.image}`}
                                                         alt="profile"
-                                                        className="object-cover w-full h-full bg-black"
+                                                        className="object-cover w-full h-full bg-black rounded-full"
                                                     />
                                                 ) : (
                                                     <div
