@@ -1,7 +1,7 @@
 import { useAppStore } from '@/store';
 import { HOST } from '@/utils/constants';
 import { createContext, useContext, useEffect, useRef } from 'react';
-import io from 'socket.io-client';
+import { io } from 'socket.io-client';
 
 const SocketContext = createContext();
 
