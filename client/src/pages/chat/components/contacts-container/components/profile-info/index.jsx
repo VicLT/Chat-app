@@ -1,7 +1,7 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import {
     Tooltip,
-    TooltipContent, 
+    TooltipContent,
     TooltipProvider,
     TooltipTrigger
 } from "@/components/ui/tooltip";
