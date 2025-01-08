@@ -34,10 +34,10 @@ const setupSocket = (server) => {
             .populate("recipient", "id email firstName lastName image color");
 
         if (recipientSocketId) {
-            io.to(recipientSocketId).emit("recieveMessage", messageData);
+            io.to(recipientSocketId).emit("receiveMessage", messageData);
         }
         if (senderSocketId) {
-            io.to(senderSocketId).emit("recieveMessage", messageData);
+            io.to(senderSocketId).emit("receiveMessage", messageData);
         }
     };
 
@@ -69,12 +69,12 @@ const setupSocket = (server) => {
             channel.members.forEach((member) => {
                 const memberSocketId = userSocketMap.get(member._id.toString());
                 if (memberSocketId) {
-                    io.to(memberSocketId).emit("recieve-channel-message", finalData);
+                    io.to(memberSocketId).emit("receive-channel-message", finalData);
                 }
             });
             const adminSocketId = userSocketMap.get(channel.admin._id.toString());
             if (adminSocketId) {
-                io.to(adminSocketId).emit("recieve-channel-message", finalData);
+                io.to(adminSocketId).emit("receive-channel-message", finalData);
             }
         }
     };
