@@ -90,7 +90,7 @@ const setupSocket = (server) => {
         }
 
         socket.on("sendMessage", sendMessage);
-        socket.on("send-channel-message", sendChannelMessage);
+        socket.on("sendChannelMessage", sendChannelMessage);
         socket.on("disconnect", () => disconnect(socket));
     });
 };
