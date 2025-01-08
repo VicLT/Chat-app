@@ -39,6 +39,10 @@ const MessageBar = () => {
     }
 
     const handleSendMessage = async () => {
+        if (!message.trim()) {
+            return;
+        }
+
         if (selectedChatType === "contact") {
             socket.emit("sendMessage", {
                 sender: userInfo.id,
@@ -107,6 +111,13 @@ const MessageBar = () => {
         }
     };
 
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter" && message.trim()) {
+            event.preventDefault();
+            handleSendMessage();
+        }
+    };
+
     return (
         <div className="h-[10vh] bg-[#1c1d25] flex justify-center items-center px-8 mb-6 gap-6">
             <div className="flex-1 flex bg-[#2a2b33] rounded-md items-center gap-5 pr-5">
@@ -116,6 +127,7 @@ const MessageBar = () => {
                     placeholder="Enter Message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    onKeyDown={handleKeyDown}
                 />
                 <button
                     className="text-neutral-500 focus:border-none focus:outline-none focus:text-white duration-300 transition-all"
