@@ -42,7 +42,7 @@ export const login = async (request, response, next) => {
     try {
         const { email, password } = request.body;
         if (!email || !password) {
-            return response.status(400).send("Email and Password is required.");
+            return response.status(400).send("Email and password is required.");
         }
         const user = await User.findOne({ email });
         if (!user) {

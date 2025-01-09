@@ -86,7 +86,7 @@ const NewDM = () => {
                             <div className="flex flex-col gap-5">
                                 {searchedContacts.map((contact) => (
                                     <div
-                                        key={contact.id}
+                                        key={contact._id}
                                         className="flex gap-3 items-center cursor-pointer"
                                         onClick={() => selectNewContact(contact)}
                                     >
